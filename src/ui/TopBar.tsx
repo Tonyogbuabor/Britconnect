@@ -19,6 +19,7 @@ import { useAppStore } from '../store/useAppStore';
 
 const VIEW_TITLES: Record<string, string> = {
   home: 'Data Hub & Ingestion',
+  executive_summary: 'Executive Summary Report',
   quality: 'Data Quality & Leakage Sentinel',
   dashboard: 'Executive Churn Dashboard',
   explorer: 'Customer Explorer 360°',
@@ -126,11 +127,18 @@ export const TopBar: React.FC<{
           {/* Download Report Button */}
           <button
             type="button"
-            onClick={() => setCurrentView('reports')}
+            onClick={() => {
+              if (currentView === 'executive_summary') {
+                window.print();
+              } else {
+                setCurrentView('executive_summary');
+              }
+            }}
+            title="Open or print the downloadable Executive Summary Report"
             className="px-3 py-1.5 text-xs font-semibold text-[#0B3D2E] bg-[#FAF6EC] hover:bg-[#BFE3CF]/40 border border-[#E6DFC8] rounded-lg transition-colors flex items-center gap-1.5 shadow-2xs"
           >
             <Download className="w-3.5 h-3.5 text-[#14633F]" />
-            <span className="hidden sm:inline">Download Report</span>
+            <span className="hidden sm:inline">Executive Report</span>
           </button>
 
           {/* AI Analyst Trigger */}

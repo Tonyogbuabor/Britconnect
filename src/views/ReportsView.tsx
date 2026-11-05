@@ -11,6 +11,9 @@ import {
   Cpu,
   ShieldCheck,
   Award,
+  Sparkles,
+  ArrowRight,
+  FileDown,
 } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
 
@@ -19,6 +22,7 @@ export const ReportsView: React.FC = () => {
   const engineeredDataset = useAppStore((s) => s.engineeredDataset);
   const championModel = useAppStore((s) => s.championModel);
   const qualityReport = useAppStore((s) => s.qualityReport);
+  const setCurrentView = useAppStore((s) => s.setCurrentView);
 
   const total = engineeredDataset.length;
   const churned = engineeredDataset.filter((c) => c.churnFlag === 1);
@@ -59,23 +63,33 @@ export const ReportsView: React.FC = () => {
           </p>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
+          <button
+            type="button"
+            onClick={() => setCurrentView('executive_summary')}
+            className="px-4 py-2 bg-[#14633F] hover:bg-[#0B3D2E] text-white text-xs font-semibold rounded-xl flex items-center gap-1.5 transition-all shadow-xs"
+          >
+            <Sparkles className="w-3.5 h-3.5 text-[#F0E2B0]" />
+            <span>Open Executive Summary Report</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </button>
+
           <button
             type="button"
             onClick={printReport}
             className="px-4 py-2 bg-[#FAF6EC] hover:bg-[#BFE3CF]/40 border border-[#E6DFC8] text-[#0B3D2E] text-xs font-semibold rounded-xl flex items-center gap-1.5 transition-colors shadow-2xs"
           >
             <Printer className="w-3.5 h-3.5 text-[#14633F]" />
-            <span>Print Executive Briefing</span>
+            <span>Print Briefing</span>
           </button>
 
           <button
             type="button"
             onClick={downloadModelCardJSON}
-            className="px-4 py-2 bg-[#14633F] hover:bg-[#0B3D2E] text-white text-xs font-semibold rounded-xl flex items-center gap-1.5 transition-colors shadow-xs"
+            className="px-4 py-2 bg-[#FAF6EC] hover:bg-[#BFE3CF]/40 border border-[#E6DFC8] text-[#0B3D2E] text-xs font-semibold rounded-xl flex items-center gap-1.5 transition-colors shadow-2xs"
           >
-            <Download className="w-3.5 h-3.5 text-[#F0E2B0]" />
-            <span>Download Model Card (JSON)</span>
+            <Download className="w-3.5 h-3.5 text-[#14633F]" />
+            <span>Model Card (JSON)</span>
           </button>
         </div>
       </div>

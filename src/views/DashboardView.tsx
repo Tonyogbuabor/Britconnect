@@ -20,6 +20,7 @@ import {
   ShieldCheck,
   ChevronRight,
   Filter,
+  ArrowRight,
 } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
 import { ChartCard } from '../ui/ChartCard';
@@ -327,6 +328,18 @@ export const DashboardView: React.FC = () => {
                     Assign a dedicated retention specialist to contact the top 10 highest-spend accounts at Critical risk immediately.
                   </p>
                 </div>
+              </div>
+
+              <div className="pt-2 flex items-center justify-between border-t border-[#E6DFC8]">
+                <span className="text-[11px] text-[#7A877F]">Certified board-ready report with plain recommendations</span>
+                <button
+                  type="button"
+                  onClick={() => setCurrentView('executive_summary')}
+                  className="px-3 py-1.5 bg-[#14633F] hover:bg-[#0B3D2E] text-white text-xs font-semibold rounded-lg flex items-center gap-1.5 transition-colors shadow-2xs"
+                >
+                  <span>Open Downloadable Executive Summary</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-[#F0E2B0]" />
+                </button>
               </div>
             </div>
           </div>

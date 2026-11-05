@@ -22,6 +22,7 @@ import { PlaybookView } from './views/PlaybookView';
 import { CampaignView } from './views/CampaignView';
 import { AnalystView } from './views/AnalystView';
 import { ReportsView } from './views/ReportsView';
+import { ExecutiveSummaryView } from './views/ExecutiveSummaryView';
 import { SettingsDocsView } from './views/SettingsDocsView';
 
 const PIPELINE_STEPS = [
@@ -31,6 +32,7 @@ const PIPELINE_STEPS = [
   { id: 'scoring', label: 'Score Risk' },
   { id: 'dashboard', label: 'Dashboard' },
   { id: 'playbook', label: 'Act & Save' },
+  { id: 'executive_summary', label: 'Executive Report' },
 ];
 
 export default function App() {
@@ -105,6 +107,7 @@ export default function App() {
           {currentView === 'campaigns' && <CampaignView />}
           {currentView === 'analyst' && <AnalystView />}
           {currentView === 'reports' && <ReportsView />}
+          {currentView === 'executive_summary' && <ExecutiveSummaryView />}
           {currentView === 'settings' && <SettingsDocsView />}
         </main>
       </div>

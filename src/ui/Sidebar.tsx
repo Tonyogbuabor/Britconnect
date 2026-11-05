@@ -21,6 +21,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Sparkles,
+  Award,
 } from 'lucide-react';
 import { useAppStore, AppNavView } from '../store/useAppStore';
 
@@ -33,8 +34,9 @@ interface NavItem {
 
 const NAV_ITEMS: NavItem[] = [
   { id: 'home', label: 'Data Hub', icon: Database },
-  { id: 'quality', label: 'Quality & Cleaning', icon: ShieldCheck },
   { id: 'dashboard', label: 'Executive Dashboard', icon: LayoutDashboard },
+  { id: 'executive_summary', label: 'Executive Summary', icon: Award, badge: 'Exec' },
+  { id: 'quality', label: 'Quality & Cleaning', icon: ShieldCheck },
   { id: 'explorer', label: 'Customer Explorer', icon: Users },
   { id: 'models', label: 'Model Lab', icon: Cpu },
   { id: 'scoring', label: 'Risk Scoring', icon: Target },

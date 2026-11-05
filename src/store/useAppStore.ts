@@ -34,6 +34,7 @@ import { compilePrecomputedFacts, askAIAnalyst } from '../chat/analystService';
 
 export type AppNavView =
   | 'home'
+  | 'executive_summary'
   | 'quality'
   | 'dashboard'
   | 'explorer'
