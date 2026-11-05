@@ -1,0 +1,6 @@
+{
+  "name": "BritConnect AI Churn Intelligence",
+  "description": "Enterprise customer churn intelligence, predictive modelling, risk scoring, explainability, and retention playbook platform for UK telecoms.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
